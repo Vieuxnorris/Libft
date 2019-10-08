@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   toupper.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 19:25:26 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 19:34:42 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/08 10:52:27 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/08 10:52:35 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *string, int searchedChar)
+int ft_toupper(int c)
 {
-	char *tmp;
-
-	tmp = (char *)string;
-	while (*tmp != searchedChar)
-	{
-		if (*tmp == '\0')
-			return (0);
-		tmp++;
-	}
-	return (tmp);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }

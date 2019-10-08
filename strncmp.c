@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   strncmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 19:25:26 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 19:34:42 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/08 11:16:51 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/08 11:16:55 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *string, int searchedChar)
+int ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	char *tmp;
-
-	tmp = (char *)string;
-	while (*tmp != searchedChar)
+	while (n >= 0)
 	{
-		if (*tmp == '\0')
-			return (0);
-		tmp++;
+		if (*str1 > *str2)
+			return (*str1 - *str2);
+		if (*str1 < *str2)
+			return (*str2 - *str1);
+		return (*str1 - *str2);
 	}
-	return (tmp);
 }

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   tolower.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 19:25:26 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 19:34:42 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/08 11:05:08 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/08 11:05:12 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *string, int searchedChar)
+int ft_tolower(int c)
 {
-	char *tmp;
-
-	tmp = (char *)string;
-	while (*tmp != searchedChar)
-	{
-		if (*tmp == '\0')
-			return (0);
-		tmp++;
-	}
-	return (tmp);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

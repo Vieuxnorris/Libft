@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   strrchr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 19:25:26 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 19:34:42 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/08 11:43:43 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/08 11:43:46 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *string, int searchedChar)
+char *ft_strrchr(const char *str, int c)
 {
-	char *tmp;
-
-	tmp = (char *)string;
-	while (*tmp != searchedChar)
+	char *last_position;
+	
+	last_position = (0);
+	while (*str != '\0')
 	{
-		if (*tmp == '\0')
-			return (0);
-		tmp++;
+		if (*str == c)
+			last_position = (char *)str;
+		str++;
 	}
-	return (tmp);
+	if (last_position)
+		return (last_position);
+	if (c == '\0')
+		return ((char *)str);
+	return (0);
 }
