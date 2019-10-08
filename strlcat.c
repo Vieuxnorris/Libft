@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   strlcat.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 19:25:26 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 19:34:42 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/08 18:40:12 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/08 18:40:15 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *string, int searchedChar)
+size_t ft_strlcat(char *dest, const char *src, size_t size)
 {
-	char *tmp;
-
-	tmp = (char *)string;
-	while (*tmp != searchedChar)
+	size_t i;
+	size_t s1_end;
+	
+	i = 0;
+	while (dest[i] && i < size)
+		i++;
+	s1_end = i;
+	while (src[i - s1_end] && i < size - 1)
 	{
-		if (*tmp == '\0')
-			return (0);
-		tmp++;
+		dest[i] = src[i - s1_end];
+		i++;
 	}
-	return (tmp);
+	if (s1_end < size)
+		dest[i] = '\0';
+	return (s1_end + ft_strlen(src));
 }

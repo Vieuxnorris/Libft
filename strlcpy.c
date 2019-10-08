@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   strlcpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 19:25:26 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 19:34:42 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/08 19:05:04 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/08 19:05:06 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *string, int searchedChar)
+int ft_strlen(const char *str)
 {
-	char *tmp;
-
-	tmp = (char *)string;
-	while (*tmp != searchedChar)
+	int i;
+	
+	i = 0;
+	while (*str != '\0')
 	{
-		if (*tmp == '\0')
-			return (0);
-		tmp++;
+		str++;
+		i++;
 	}
-	return (tmp);
+	return (i);
+}
+
+size_t ft_strlcpy(char *dest, const char *src, size_t size)
+{
+	int i;
+	
+	i = 0;
+	while ((*src != '\0') && size > 0)
+	{
+		dest[i] = src[i];
+		i++;
+		size--;
+	}
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }
