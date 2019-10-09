@@ -1,6 +1,10 @@
 # Libft
 42 Projects bibliothèque personnel
 
+# Tools
+- [x] Libft.h
+- [x] Makefile
+
 # Base
 - [x] ft_atoi.c                     
 - [x] ft_bzero.c                    
