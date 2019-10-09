@@ -24,3 +24,5 @@
 - [x] ft_strlcpy.c
 - [x] ft_strlcat.c
 - [x] ft_strchr.c
+- [x] ft_strdup.c
+- [x] ft_calloc.c
