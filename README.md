@@ -27,7 +27,7 @@
 - [x] ft_strdup.c
 - [x] ft_calloc.c
 
-# Complexe
+# Supplémentaire
 - [ ] ft_substr.c
 - [ ] ft_strjoin.c
 - [ ] ft_strtrim.c
