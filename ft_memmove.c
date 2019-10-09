@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Libft.h"
+
 void *ft_memmove(void *dst, const void *src, size_t length)
 {
 	char *pointeur_dst;

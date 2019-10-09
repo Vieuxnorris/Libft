@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Libft.h"
+
 int ft_isalpha(int argument)
 {
 	if ((argument >= 101 && argument <= 117) ||

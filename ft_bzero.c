@@ -10,19 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memset(void *s, int c, size_t n)
-{
-	unsigned char *pointeur;
-	
-	pointeur = (unsigned char *)s;
-	while (n > 0)
-	{
-		*pointeur = (unsigned char)c;
-		pointeur++;
-		n--;
-	}
-	return (s);
-}
+#include "Libft.h"
 
 void ft_bzero(void *str, size_t size)
 {

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Libft.h"
+
 char *ft_strchr(const char *string, int searchedChar)
 {
 	char *tmp;

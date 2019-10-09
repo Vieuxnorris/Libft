@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Libft.h"
+
 void *ft_memccpy(void *dest, const void *src, int c, size_t cnt)
 {
 	unsigned char *pointeur_dest;

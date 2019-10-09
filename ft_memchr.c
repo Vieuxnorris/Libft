@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Libft.h"
+
 void *ft_memchr(const void *destination, int searchedChar, size_t size)
 {
 	unsigned char *pointeur_destination;

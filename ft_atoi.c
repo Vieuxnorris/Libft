@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Libft.h"
+
 int ft_atoi(const char *str)
 {
 	long long int result;

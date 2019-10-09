@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Libft.h"
+
 int ft_isalnum(int character)
 {
 	if ((character >= 48 && character <= 57) ||

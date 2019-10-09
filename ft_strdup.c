@@ -10,32 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int ft_strlen(const char *str)
-{
-	int i;
-	
-	i = 0;
-	while (*str != '\0')
-	{
-		str++;
-		i++;
-	}
-	return (i);
-}
-
-char *ft_strcpy(char *dest, const char *src)
-{
-	while (*src != '\0')
-	{
-		*dest = *src;
-		dest++;
-		src++;
-	}
-	*dest = '\0';
-	return (dest);
-}
+#include "Libft.h"
 
 char *ft_strdup(const char *str)
 {
