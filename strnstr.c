@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-
 int ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
 {
 	unsigned char *pointer1_clone;
@@ -61,14 +58,4 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 		len--;
 	}
 	return (NULL);
-}
-
-int main()
-{
-	const char *largestring = "Foo Bas Baz";
-	const char *smallstring = "Bar";
-	char *ptr;
-
-	ptr = ft_strnstr(largestring, smallstring, 4);
-	printf("%s",ptr);
 }
