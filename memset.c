@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   memset.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 09:16:53 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 09:39:47 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/09 17:06:50 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/09 17:06:54 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *str)
+void *ft_memset(void *s, int c, size_t n)
 {
-	int i;
-
-	i = 0;
-	while (*str != '\0')
+	unsigned char *pointeur;
+	
+	pointeur = (unsigned char *)s;
+	while (n > 0)
 	{
-		i++;
-		str++;
+		*pointeur = (unsigned char)c;
+		pointeur++;
+		n--;
 	}
-	return (i);
+	return (s);
 }

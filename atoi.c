@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   atoi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 09:16:53 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 09:39:47 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/08 19:18:51 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/09 16:51:46 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *str)
+int ft_atoi(const char *str)
 {
-	int i;
+	long long int result;
+	long long int neg;
 
-	i = 0;
-	while (*str != '\0')
+	neg = 1;
+	result = 0;
+	while (*str == 32 || *str == 10 || *str == 9 || *str == 12 ||
+			*str == 13 || *str == 11)
+			str++;
+	if (*str == '-' || *str == '+')
 	{
-		i++;
+		if (*str == '-')
+			neg = -1;
 		str++;
 	}
-	return (i);
+	while (*str != '\0')
+	{
+		if (*str < 48 || *str > 57)
+			return (result * neg);
+		else
+			result = (result * 10) + (long long int)(*str - '0');
+		str++;
+	}
+	return (result * neg);
 }

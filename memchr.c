@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   memchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 09:16:53 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 09:39:47 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/09 17:49:03 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/09 17:49:05 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *str)
+void *ft_memchr(const void *destination, int searchedChar, size_t size)
 {
-	int i;
-
+	unsigned char *pointeur_destination;
+	unsigned int i;
+	
 	i = 0;
-	while (*str != '\0')
+	pointeur_destination = (unsigned char *)destination;
+	while (i < size)
 	{
+		if (*pointeur_destination == searchedChar)
+			return (pointeur_destination);
+		pointeur_destination++;
 		i++;
-		str++;
 	}
-	return (i);
+	return (0);
 }

@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 09:16:53 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 09:39:47 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/09 17:23:52 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/09 17:23:54 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(const char *str)
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int i;
-
+	unsigned char *pointeur_src;
+	unsigned char *pointeur_dest;
+	size_t i;
+	
+	pointeur_src = (unsigned char *)src;
+	pointeur_dest = (unsigned char *)dest;
 	i = 0;
-	while (*str != '\0')
+	while (i < n)
 	{
+		*(pointeur_dest + i) = *(pointeur_src + i);
 		i++;
-		str++;
 	}
-	return (i);
+	return (dest);
 }
