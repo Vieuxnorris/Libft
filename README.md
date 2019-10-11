@@ -32,8 +32,8 @@
 - [x] ft_calloc.c
 
 # Supplémentaire
-- [ ] ft_substr.c
-- [ ] ft_strjoin.c
+- [x] ft_substr.c
+- [x] ft_strjoin.c
 - [ ] ft_strtrim.c
 - [ ] ft_split.c
 - [x] ft_itoa.c
