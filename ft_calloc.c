@@ -21,6 +21,8 @@ void *ft_calloc(size_t nitems, size_t size)
 	if (nitems == 0 || size == 0)
 		return (NULL);
 	result = malloc(size * nitems);
+	if (result == NULL)
+		return (NULL);
 	while (i <= nitems)
 	{
 		((char *)result)[i] = 0;
