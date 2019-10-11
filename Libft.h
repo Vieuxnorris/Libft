@@ -28,5 +28,8 @@ char *ft_strrchr(const char *str, int c);
 int ft_tolower(int c);
 int ft_toupper(int c);
 char *ft_strcpy(char *dest, const char *src);
+char *ft_itoa(int n);
+char *ft_strjoin(char const *s1, char const *s2);
+char *ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
