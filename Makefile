@@ -20,7 +20,7 @@ SOURCES = ft_atoi.c\
 			ft_memset.c\
 			ft_strchr.c\
 			ft_strdup.c\
-			ft_strcat.c\
+			ft_strlcat.c\
 			ft_strcpy.c\
 			ft_strlen.c\
 			ft_strnstr.c\
@@ -36,19 +36,16 @@ $(NAME):
 		@$(CC) $(FLAGS) -c $(SOURCES)
 		@ar rc $(NAME) $(OBJECT)
 		@ranlib $(NAME)
-		@make -C ft_lib
 		@echo "\033[1;34mLibft\t\t\033[1;33mCompilation\t\033[0;32m[OK]\033[0m"
 
 all: $(NAME)
 
 clean:
 		@rm -rf $(OBJECT)
-		@make clean -C ft_lib
 		@echo "\033[1;34mLibft\t\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"
 
 fclean: clean
 		@rm -fr $(NAME)
-		@make fclean -C ft_lib
 		@echo "\033[1;34mLibft\t\t\033[1;33mCleaning obj\t\033[0;32m[OK]\033[0m"
 
 re: fclean all
