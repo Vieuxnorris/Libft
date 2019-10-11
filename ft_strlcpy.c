@@ -14,15 +14,20 @@
 
 size_t ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int i;
+	char *d;
+	char *s;
+	size_t len;
+	size_t dst_len;
 	
-	i = 0;
-	while ((*src != '\0') && size > 0)
-	{
-		dest[i] = src[i];
-		i++;
-		size--;
-	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	if (!(d = (char *)ft_memchr(dest, '\0', size)))
+		return (size + ft_strlen(src));
+	s = (char *)src;
+	d = (char *)dst;
+	dst_len = ft_strlen(dst);
+	len = dst_len + ft_strlen(s);
+	d += dst_len;
+	while (dst_len++ < size - 1 && *s)
+		*d++ = *s++;
+	*d = '\0';
+	return (len);
 }

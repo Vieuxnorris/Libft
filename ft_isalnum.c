@@ -20,3 +20,4 @@ int ft_isalnum(int character)
 	    return (1);
 	return (0);
 }
+

@@ -14,20 +14,13 @@
 
 int ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
 {
-	unsigned char *pointer1_clone;
-	unsigned char *pointer2_clone;
-	unsigned int i;
-	
-	pointer1_clone = (unsigned char *)pointer1;
-	pointer2_clone = (unsigned char *)pointer2;
-	i = 0;
-	while (i < size && (*pointer1_clone == *pointer2_clone))
-	{
-		pointer1_clone++;
-		pointer2_clone++;
-		i++;
-	}
-	if (i == size)
-		return (0);
-	return (*pointer1_clone - *pointer2_clone);
+	while (size > 0)
+    {
+		if (*pointer1 != *pointer2)
+			return (*pointer1 - *pointer2);
+		*pointer1++;
+		*pointer2++;
+		size--;
+    }
+	return (0);
 }
