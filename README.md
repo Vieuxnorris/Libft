@@ -34,8 +34,8 @@
 # Supplémentaire
 - [x] ft_substr.c
 - [x] ft_strjoin.c
-- [ ] ft_strtrim.c
-- [ ] ft_split.c
+- [x] ft_strtrim.c
+- [x] ft_split.c
 - [x] ft_itoa.c
 - [ ] ft_strmapi.c
 - [ ] ft_putchar_fd.c
