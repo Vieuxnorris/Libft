@@ -44,4 +44,4 @@
 - [x] ft_putnbr_fd.c
 
 # Download
-https://github.com/Vieuxnorris/Libft/archive/1.2.zip
+https://github.com/Vieuxnorris/Libft/archive/1.3.zip
