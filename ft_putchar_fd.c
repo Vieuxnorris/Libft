@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include "Libft.h"
 
 void ft_putchar_fd(char c, int fd)
