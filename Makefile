@@ -1,4 +1,4 @@
-NAME=Libft.a
+NAME=libft.a
 CC=gcc
 CFLAGS=-Wall -Wextra -Werror
 RM=rm -f
@@ -40,7 +40,7 @@ SRC= ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 OBJ = $(SRC:.c=.o)
-INC = Libft.h
+INC = libft.h
 
 $(NAME): $(OBJ)
 				ar rc $(NAME) $(OBJ)
