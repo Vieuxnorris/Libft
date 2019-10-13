@@ -22,8 +22,8 @@ size_t ft_strlcpy(char *dest, const char *src, size_t size)
 	if (!(d = (char *)ft_memchr(dest, '\0', size)))
 		return (size + ft_strlen(src));
 	s = (char *)src;
-	d = (char *)dst;
-	dst_len = ft_strlen(dst);
+	d = (char *)dest;
+	dst_len = ft_strlen(dest);
 	len = dst_len + ft_strlen(s);
 	d += dst_len;
 	while (dst_len++ < size - 1 && *s)
