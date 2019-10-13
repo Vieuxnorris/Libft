@@ -1,3 +1,5 @@
+#include "Libft.h"
+
 int ft_strlen_trim(char const *s1, char const *set)
 {
 	int i;
@@ -16,7 +18,7 @@ int ft_strlen_trim(char const *s1, char const *set)
 	return (i);
 }
 
-char ft_copie_trim(char const *s1, char const *set, char *copie_trim)
+char *ft_copie_trim(char const *s1, char const *set, char *copie_trim)
 {
 	while (*s1 != '\0')
 	{
@@ -41,6 +43,6 @@ char *ft_strtrim(char const *s1, char const *set)
 	trim_copie = (char *)malloc(sizeof(*s1) * (taille + 1));
 	if (trim_copie == NULL)
 		return (NULL);
-	ft_copie_trim(s1,set,copie_trim);
+	ft_copie_trim(s1,set,trim_copie);
 	return (trim_copie);
 }

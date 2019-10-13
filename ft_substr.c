@@ -2,13 +2,11 @@
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    long length;
     size_t index;
     char *copie;
     
-    if (*s == '\0' || len < 0)
+    if (*s == '\0' || len <= 0)
         return (NULL);
-    length = len - start;
     copie = (char *)malloc(len + 1);
     if (copie == NULL)
         return (NULL);

@@ -1,4 +1,4 @@
-#include "Libft.h";
+#include "Libft.h"
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

@@ -40,7 +40,7 @@ SRC= ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 OBJ = $(SRC:.c=.o)
-INC = ./inc/
+INC = Libft.h
 
 $(NAME): $(OBJ)
 				ar rc $(NAME) $(OBJ)
