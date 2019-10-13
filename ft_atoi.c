@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 19:18:51 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/09 16:51:46 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/13 14:38:01 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/13 14:47:27 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	long long int result;
 	long long int neg;
@@ -21,7 +21,7 @@ int ft_atoi(const char *str)
 	result = 0;
 	while (*str == 32 || *str == 10 || *str == 9 || *str == 12 ||
 			*str == 13 || *str == 11)
-			str++;
+		str++;
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')

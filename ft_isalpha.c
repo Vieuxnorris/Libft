@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 09:46:52 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 10:21:30 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/13 14:59:54 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/13 15:00:56 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
-int ft_isalpha(int argument)
+int	ft_isalpha(int argument)
 {
 	if ((argument >= 101 && argument <= 117) ||
 		(argument >= 120 && argument <= 127) ||

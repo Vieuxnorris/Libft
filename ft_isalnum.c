@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalnum.c                                          :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 18:02:36 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 18:16:42 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/13 14:57:06 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/13 14:59:01 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
-int ft_isalnum(int character)
+int	ft_isalnum(int character)
 {
 	if ((character >= 48 && character <= 57) ||
-	    (character >= 65 && character <= 90) ||
-	    (character >= 97 && character <= 122))
-	    return (1);
+			(character >= 65 && character <= 90) ||
+			(character >= 97 && character <= 122))
+		return (1);
 	return (0);
 }
-

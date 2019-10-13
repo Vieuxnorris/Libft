@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 19:08:28 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/09 19:08:30 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/13 16:04:00 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/13 16:04:28 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t i;
-	
+
 	if (*little == '\0')
 		return ((char *)big);
 	i = ft_strlen(little);

@@ -1,9 +1,21 @@
-#include "Libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/13 15:48:31 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/13 15:49:53 by jwins            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static size_t ft_count_words(char *str, char c)
+#include "libft.h"
+
+static size_t	ft_count_words(char *str, char c)
 {
-	size_t nb_words;
-	
+	size_t	nb_words;
+
 	while (*str && *str == c)
 		str++;
 	nb_words = (*str ? 1 : 0);
@@ -16,15 +28,15 @@ static size_t ft_count_words(char *str, char c)
 	return (nb_words);
 }
 
-char **ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	size_t nb_words;
-	char *wrd_begin;
-	char **result;
-	
+	size_t	nb_words;
+	char	*wrd_begin;
+	char	**result;
+
 	if (s == NULL)
 		return (NULL);
-	nb_words = ft_count_words((char *)s,c);
+	nb_words = ft_count_words((char *)s, c);
 	result = (char **)malloc(sizeof(char *) * (nb_words + 1));
 	if (result == NULL)
 		return (NULL);

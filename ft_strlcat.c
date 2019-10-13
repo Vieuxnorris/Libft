@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcat.c                                          :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 18:40:12 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/08 18:40:15 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/13 15:55:48 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/13 15:56:29 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
-size_t ft_strlcat(char *dest, const char *src, size_t size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t i;
-	size_t s1_end;
-	
+	size_t	i;
+	size_t	s1_end;
+
 	i = 0;
 	while (dest[i] && i < size)
 		i++;

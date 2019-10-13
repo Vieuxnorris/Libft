@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isprint.c                                          :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 18:38:22 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/07 18:45:45 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/13 15:04:29 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/13 15:05:13 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
-int ft_isprint(int character)
+int	ft_isprint(int character)
 {
 	return (character >= ' ' && character <= '~');
 }

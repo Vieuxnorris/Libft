@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlcpy.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 19:05:04 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/08 19:05:06 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/13 15:56:38 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/13 15:58:12 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	char *d;
-	char *s;
-	size_t len;
-	size_t dst_len;
-	
+	char	*d;
+	char	*s;
+	size_t	len;
+	size_t	dst_len;
+
 	if (!(d = (char *)ft_memchr(dest, '\0', size)))
 		return (size + ft_strlen(src));
 	s = (char *)src;

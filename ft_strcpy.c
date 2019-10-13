@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 08:34:45 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/10 08:34:47 by jwins            ###   ########.fr       */
+/*   Created: 2019/10/13 15:51:30 by jwins             #+#    #+#             */
+/*   Updated: 2019/10/13 15:51:54 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft.h"
+#include "libft.h"
 
-char *ft_strcpy(char *dest, const char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	size_t len;
 	size_t i;
-	
+
 	if (!src || !dest)
 		return (NULL);
 	len = ft_strlen(src);
