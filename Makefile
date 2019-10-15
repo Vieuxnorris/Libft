@@ -51,6 +51,9 @@ $(NAME): $(OBJ)
 				
 all: $(NAME)
 
+so:
+	$(CC) -fPIC $(CFLAGS) -pedantic $(SRC) -shared -o libft.so
+
 clean:
 				$(RM) $(OBJ)
 				

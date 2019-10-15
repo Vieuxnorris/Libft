@@ -11,16 +11,22 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <ctype.h>
 
 int	ft_isalpha(int argument)
 {
-	if ((argument >= 101 && argument <= 117) ||
-		(argument >= 120 && argument <= 127) ||
-		(argument >= 130 && argument <= 132) ||
-		(argument >= 141 && argument <= 147) ||
-		(argument >= 150 && argument <= 157) ||
-		(argument >= 160 && argument <= 167) ||
-		(argument >= 170 && argument <= 172))
+	if ((argument >= 65 && argument <= 90) ||
+			(argument >= 97 && argument <= 122))
 		return (1);
+	return (0);
+}
+
+int main()
+{
+	char str;
+
+	str = '0';
+	printf("%d | %d", isalpha(str), ft_isalpha(str));
 	return (0);
 }

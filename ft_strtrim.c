@@ -47,7 +47,7 @@ char	*ft_copie_trim(char const *s1, char const *set, char *copie_trim)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	taille;
-	char	*trim_copie;
+	unsigned char	*trim_copie;
 
 	if (*s1 == '\0')
 		return (NULL);
