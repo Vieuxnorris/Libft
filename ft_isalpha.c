@@ -11,22 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <ctype.h>
 
 int	ft_isalpha(int argument)
 {
 	if ((argument >= 65 && argument <= 90) ||
 			(argument >= 97 && argument <= 122))
 		return (1);
-	return (0);
-}
-
-int main()
-{
-	char str;
-
-	str = '0';
-	printf("%d | %d", isalpha(str), ft_isalpha(str));
 	return (0);
 }
