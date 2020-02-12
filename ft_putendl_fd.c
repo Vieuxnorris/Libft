@@ -5,15 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:44:53 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:45:15 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 19:03:59 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 19:02:07 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putstr_fd(s, fd);
+	int i;
+
+	i = 0;
+	if (s)
+		while (s[i])
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
 	ft_putchar_fd('\n', fd);
 }

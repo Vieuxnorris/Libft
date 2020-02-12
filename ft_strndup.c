@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 15:50:10 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/12 15:54:21 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 16:11:42 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 16:14:00 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strndup(const char *s1, size_t size)
 {
-	char			*dest;
-	const char		*source;
-	size_t			i;
-	size_t			dlen;
+	char	*new_str;
+	char	*new_cpy;
 
-	dest = dst;
-	source = src;
-	i = size;
-	while (i-- != 0 && *dest)
-		dest++;
-	dlen = dest - dst;
-	i = size - dlen;
-	if (i == 0)
-		return (dlen + ft_strlen(source));
-	while (*source)
+	if (!(new_str = (char *)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	new_cpy = new_str;
+	while (*s1 && size)
 	{
-		if (i != 1)
-		{
-			*dest++ = *source;
-			i--;
-		}
-		source++;
+		*new_cpy++ = *s1++;
+		size--;
 	}
-	*dest = '\0';
-	return (dlen + (source - src));
+	*new_cpy = '\0';
+	return (new_str);
 }

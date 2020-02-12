@@ -5,26 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:22:32 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:30:13 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 18:41:44 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 18:43:30 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *destination, int searchedchar, size_t size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*pointeur_destination;
-	unsigned int	i;
+	unsigned char *cur;
 
-	i = 0;
-	pointeur_destination = (unsigned char *)destination;
-	while (i < size)
+	cur = (unsigned char *)s;
+	while (n--)
 	{
-		if (*pointeur_destination == searchedchar)
-			return (pointeur_destination);
-		pointeur_destination++;
-		i++;
+		if (*cur == (unsigned char)c)
+			return (cur);
+		if (n)
+			cur++;
 	}
 	return (0);
 }

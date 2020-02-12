@@ -5,23 +5,32 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:52:13 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:52:56 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 15:37:46 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 19:00:49 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+char		*ft_strdup(const char *src)
 {
-	int		len;
-	char	*scop;
+	char	*new;
+	int		i;
+	int		size;
 
-	len = ((ft_strlen(str)) + 1);
-	if ((scop = ((char *)malloc(sizeof(char) * len))))
+	size = 0;
+	while (src[size])
+		++size;
+	if (!(new = malloc(sizeof(char) * (size + 1))))
 	{
-		ft_strcpy(scop, str);
-		return (scop);
+		return (NULL);
 	}
-	return (NULL);
+	i = 0;
+	while (src[i])
+	{
+		new[i] = src[i];
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }

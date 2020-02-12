@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 16:00:00 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 16:00:37 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 15:59:21 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 16:01:36 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*new_str;
+	char	*str;
 	size_t	i;
 
-	if (*s == '\0')
-		return (NULL);
-	new_str = ft_strdup((const char *)s);
-	if (new_str == NULL)
-		return (NULL);
-	i = 0;
-	while (new_str[i] != '\0')
+	if (s)
 	{
-		new_str[i] = f((unsigned int)i, new_str[i]);
-		i++;
+		str = ft_strdup((const char *)s);
+		if (str == NULL)
+			return (NULL);
+		i = 0;
+		while (str[i] != 0)
+		{
+			str[i] = f((unsigned int)i, str[i]);
+			i++;
+		}
+		return (str);
 	}
-	return (new_str);
+	else
+		return (NULL);
 }

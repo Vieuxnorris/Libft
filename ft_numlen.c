@@ -1,42 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 15:50:10 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/12 15:54:21 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 18:57:46 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 18:59:07 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int			ft_numlen(int n, int minus)
 {
-	char			*dest;
-	const char		*source;
-	size_t			i;
-	size_t			dlen;
+	int	numlen;
 
-	dest = dst;
-	source = src;
-	i = size;
-	while (i-- != 0 && *dest)
-		dest++;
-	dlen = dest - dst;
-	i = size - dlen;
-	if (i == 0)
-		return (dlen + ft_strlen(source));
-	while (*source)
-	{
-		if (i != 1)
-		{
-			*dest++ = *source;
-			i--;
-		}
-		source++;
-	}
-	*dest = '\0';
-	return (dlen + (source - src));
+	numlen = 1;
+	while ((n /= 10))
+		numlen++;
+	return (numlen + minus);
 }

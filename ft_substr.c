@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 16:07:00 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 16:09:04 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 16:32:56 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 18:00:39 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,19 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	index;
-	char	*copie;
+	char	*scpy;
 
-	if (*s == '\0' || len <= 0)
-		return (NULL);
-	copie = (char *)malloc(len + 1);
-	if (copie == NULL)
-		return (NULL);
-	index = 0;
-	while (index < start)
-		if (*s != '\0')
-			index++;
-	if (index != start)
-		return (NULL);
-	index = 0;
-	while (index < len)
+	if (ft_strlen(s) < start)
 	{
-		*(copie + index) = *(s + start);
-		index++;
-		start++;
+		if (!(scpy = malloc(sizeof(char))))
+			return (NULL);
+		*scpy = '\0';
+		return (scpy);
 	}
-	copie[index] = '\0';
-	return (copie);
+	else if (s)
+	{
+		return (ft_strndup(&s[start], len));
+	}
+	else
+		return (NULL);
 }

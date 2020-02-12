@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 15:50:10 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/12 15:54:21 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 15:32:50 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 19:01:12 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	char			*dest;
-	const char		*source;
-	size_t			i;
-	size_t			dlen;
+	size_t		len;
+	size_t		len2;
+	int			result;
 
-	dest = dst;
-	source = src;
-	i = size;
-	while (i-- != 0 && *dest)
-		dest++;
-	dlen = dest - dst;
-	i = size - dlen;
-	if (i == 0)
-		return (dlen + ft_strlen(source));
-	while (*source)
-	{
-		if (i != 1)
-		{
-			*dest++ = *source;
-			i--;
-		}
-		source++;
-	}
-	*dest = '\0';
-	return (dlen + (source - src));
+	len = ft_strlen(s1) + 1;
+	len2 = ft_strlen(s2) + 1;
+	len = (len <= len2) ? len : len2;
+	result = ft_memcmp(s1, s2, len);
+	return (result);
 }

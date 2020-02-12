@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 15:50:10 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/12 15:54:21 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 16:09:27 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 16:11:11 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	char			*dest;
-	const char		*source;
-	size_t			i;
-	size_t			dlen;
+	size_t	i;
 
-	dest = dst;
-	source = src;
-	i = size;
-	while (i-- != 0 && *dest)
-		dest++;
-	dlen = dest - dst;
-	i = size - dlen;
-	if (i == 0)
-		return (dlen + ft_strlen(source));
-	while (*source)
+	i = 0;
+	while (src[i] != '\0' && i < n)
 	{
-		if (i != 1)
-		{
-			*dest++ = *source;
-			i--;
-		}
-		source++;
+		dest[i] = src[i];
+		++i;
 	}
-	*dest = '\0';
-	return (dlen + (source - src));
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

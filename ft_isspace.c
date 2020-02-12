@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 15:50:10 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/12 15:54:21 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 17:36:24 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 17:38:11 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int		ft_isspace(int c)
 {
-	char			*dest;
-	const char		*source;
-	size_t			i;
-	size_t			dlen;
-
-	dest = dst;
-	source = src;
-	i = size;
-	while (i-- != 0 && *dest)
-		dest++;
-	dlen = dest - dst;
-	i = size - dlen;
-	if (i == 0)
-		return (dlen + ft_strlen(source));
-	while (*source)
+	if (c == '\t'
+			|| c == '\n'
+			|| c == '\v'
+			|| c == '\f'
+			|| c == '\r'
+			|| c == ' ')
 	{
-		if (i != 1)
-		{
-			*dest++ = *source;
-			i--;
-		}
-		source++;
+		return (1);
 	}
-	*dest = '\0';
-	return (dlen + (source - src));
+	return (0);
 }

@@ -5,14 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 14:47:44 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 14:50:06 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 17:09:14 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 17:10:53 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *str, size_t size)
+void	ft_bzero(void *s, unsigned int n)
 {
-	ft_memset(str, 0, size);
+	unsigned char *ptr;
+
+	if (s == 0)
+		return ;
+	ptr = (unsigned char *)s;
+	while (n--)
+		*ptr++ = '\0';
 }

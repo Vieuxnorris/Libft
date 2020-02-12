@@ -5,23 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:50:13 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:51:20 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 15:23:15 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 15:24:48 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *string, int searchedchar)
+char	*ft_strchr(const char *s, int c)
 {
-	char	*tmp;
+	char	*ptr;
 
-	tmp = (char *)string;
-	while (*tmp != searchedchar)
+	ptr = (char *)s;
+	while (*ptr != c)
 	{
-		if (*tmp == '\0')
+		if (*ptr == '\0')
+		{
 			return (0);
-		tmp++;
+		}
+		ptr++;
 	}
-	return (tmp);
+	return (ptr);
 }

@@ -5,36 +5,50 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 14:38:01 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 14:47:27 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 16:44:02 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 19:05:06 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define MIN_INT	-2147483648
+#define MAX_INT	214783647
 
-int	ft_atoi(const char *str)
+static int		checker(const char **str)
 {
-	long long int result;
-	long long int neg;
+	int	is_negative;
 
-	neg = 1;
-	result = 0;
-	while (*str == 32 || *str == 10 || *str == 9 || *str == 12 ||
-			*str == 13 || *str == 11)
-		str++;
-	if (*str == '-' || *str == '+')
+	while (**str == ' ' || **str == '\t' || **str == '\n'
+				|| **str == '\v' || **str == '\f' || **str == '\r')
+		(*str)++;
+	is_negative = 0;
+	if (**str == '-' || **str == '+')
 	{
-		if (*str == '-')
-			neg = -1;
-		str++;
+		if (**str == '-')
+			is_negative = 1;
+		(*str)++;
 	}
-	while (*str != '\0')
+	return (is_negative);
+}
+
+int				ft_atoi(const char *str)
+{
+	long		nb;
+	int			i;
+	int			is_negative;
+
+	is_negative = checker(&str);
+	i = 0;
+	nb = 0;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (*str < 48 || *str > 57)
-			return (result * neg);
-		else
-			result = (result * 10) + (long long int)(*str - '0');
-		str++;
+		if (!is_negative && nb > (unsigned int)MAX_INT)
+			return (-1);
+		else if (nb > (unsigned int)MIN_INT)
+			return (0);
+		nb *= 10;
+		nb += str[i] - '0';
+		i++;
 	}
-	return (result * neg);
+	return ((int)(is_negative ? -nb : nb));
 }

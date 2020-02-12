@@ -5,27 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:51:30 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:51:54 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 15:35:39 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 15:37:25 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strcpy(char *dest, char const *src)
 {
-	size_t len;
-	size_t i;
+	char *tmp;
 
-	if (!src || !dest)
-		return (NULL);
-	len = ft_strlen(src);
-	i = 0;
-	while (i <= len && (*src != '\0' || *dest != '\0'))
+	tmp = dest;
+	while (*src != '\0')
 	{
-		*(dest + i) = *(src + i);
-		i++;
+		*tmp = *src;
+		tmp++;
+		src++;
 	}
-	*(dest + i) = '\0';
+	*tmp = '\0';
 	return (dest);
 }

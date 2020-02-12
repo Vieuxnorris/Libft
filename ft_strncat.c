@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 15:50:10 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/12 15:54:21 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 16:04:28 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 16:06:30 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	char			*dest;
-	const char		*source;
-	size_t			i;
-	size_t			dlen;
+	char	*cur;
 
-	dest = dst;
-	source = src;
-	i = size;
-	while (i-- != 0 && *dest)
-		dest++;
-	dlen = dest - dst;
-	i = size - dlen;
-	if (i == 0)
-		return (dlen + ft_strlen(source));
-	while (*source)
+	cur = s1;
+	while (*cur != '\0')
 	{
-		if (i != 1)
-		{
-			*dest++ = *source;
-			i--;
-		}
-		source++;
+		cur++;
 	}
-	*dest = '\0';
-	return (dlen + (source - src));
+	while (*s2 != '\0' && n > 0)
+	{
+		*cur = *s2;
+		cur++;
+		s2++;
+		n--;
+	}
+	*cur = '\0';
+	return (s1);
 }

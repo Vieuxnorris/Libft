@@ -5,18 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 14:57:06 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 14:59:01 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 17:15:11 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 19:04:28 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int character)
+int		ft_isalnum(int c)
 {
-	if ((character >= 48 && character <= 57) ||
-			(character >= 65 && character <= 90) ||
-			(character >= 97 && character <= 122))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	return (0);
+	else if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }

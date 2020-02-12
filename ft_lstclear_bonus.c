@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 15:50:10 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/12 15:54:21 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 18:14:39 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 18:17:44 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char			*dest;
-	const char		*source;
-	size_t			i;
-	size_t			dlen;
+	t_list *cur;
+	t_list *nxt;
 
-	dest = dst;
-	source = src;
-	i = size;
-	while (i-- != 0 && *dest)
-		dest++;
-	dlen = dest - dst;
-	i = size - dlen;
-	if (i == 0)
-		return (dlen + ft_strlen(source));
-	while (*source)
+	if (lst && *lst && del)
 	{
-		if (i != 1)
+		cur = *lst;
+		while (cur)
 		{
-			*dest++ = *source;
-			i--;
+			nxt = cur->next;
+			ft_lstdelone(cur, del);
+			cur = nxt;
 		}
-		source++;
+		*lst = NULL;
 	}
-	*dest = '\0';
-	return (dlen + (source - src));
 }

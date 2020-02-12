@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:02:10 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:04:17 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 17:33:45 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 17:34:38 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int arg)
+int		ft_isdigit(int c)
 {
-	if (arg >= '0' && arg <= '9')
-		return (1);
-	return (0);
+	return ((c >= '0' && c <= '9') ? 1 : 0);
 }

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:04:29 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:05:13 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 17:35:03 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 17:35:51 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int character)
+int		ft_isprint(int c)
 {
-	return (character >= ' ' && character <= '~');
+	return ((c >= 32 && c <= 126) ? 1 : 0);
 }

@@ -5,17 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 14:59:54 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:00:56 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 17:29:47 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 17:31:08 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int argument)
+int		ft_isalpha(int c)
 {
-	if ((argument >= 65 && argument <= 90) ||
-			(argument >= 97 && argument <= 122))
-		return (1);
-	return (0);
+	return (((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) ? 1 : 0);
 }

@@ -5,28 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/08 18:40:12 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 14:55:06 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 17:12:36 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 17:14:41 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nitems, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void	*result;
-	size_t	i;
+	char	*new;
 
-	i = 0;
-	if (nitems == 0 || size == 0)
+	if (!(new = malloc(size * count)))
 		return (NULL);
-	result = malloc(size * nitems);
-	if (result == NULL)
-		return (NULL);
-	while (i <= nitems)
-	{
-		((char *)result)[i] = 0;
-		i++;
-	}
-	return (result);
+	ft_memset(new, 0, count * size);
+	return (new);
 }

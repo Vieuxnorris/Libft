@@ -5,21 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:48:05 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:48:15 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 17:42:19 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 17:42:44 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *str, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (*s != '\0' && s + i != NULL)
+	if (!str)
+		return ;
+	while (*str)
 	{
-		ft_putchar_fd(s[i], fd);
-		i++;
+		ft_putchar_fd(*str, fd);
+		str++;
 	}
 }

@@ -5,56 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 16:05:37 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 16:06:43 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 16:28:43 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 16:32:31 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strlen_trim(char const *s1, char const *set)
-{
-	int	i;
-
-	i = 0;
-	while (*s1 != '\0')
-	{
-		if (*s1 == *set)
-		{
-			i--;
-			s1++;
-		}
-		i++;
-		s1++;
-	}
-	return (i);
-}
-
-char	*ft_copie_trim(char const *s1, char const *set, char *copie_trim)
-{
-	while (*s1 != '\0')
-	{
-		if (*s1 == *set)
-			s1++;
-		*copie_trim = *(char *)s1;
-		copie_trim++;
-		s1++;
-	}
-	*copie_trim = '\0';
-	return (copie_trim);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	taille;
-	unsigned char	*trim_copie;
+	size_t	beg;
+	size_t	end;
+	char	*new;
 
-	if (*s1 == '\0')
+	if (!s1 || !set)
 		return (NULL);
-	taille = ft_strlen_trim(s1, set);
-	trim_copie = (char *)malloc(sizeof(*s1) * (taille + 1));
-	if (trim_copie == NULL)
+	beg = 0;
+	while (s1[beg] && ft_strchr(set, s1[beg]))
+		beg++;
+	end = ft_strlen(s1 + beg);
+	if (end)
+		while (s1[end + beg - 1] != 0 && ft_strchr(set, s1[end + beg - 1]) != 0)
+			end--;
+	if (!(new = malloc(sizeof(char) * end + 1)))
 		return (NULL);
-	ft_copie_trim(s1, set, trim_copie);
-	return (trim_copie);
+	ft_strncpy(new, s1 + beg, end);
+	new[end] = '\0';
+	return (new);
 }

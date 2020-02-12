@@ -5,24 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:32:36 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:33:22 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 18:47:14 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/08 18:50:07 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *s1, const void *s2, size_t n)
 {
-	unsigned char	*pointeur_dest;
-	unsigned char	*pointeur_src;
+	size_t i;
 
-	pointeur_dest = (unsigned char *)dest;
-	pointeur_src = (unsigned char *)src;
-	while (n > 0)
+	if (s1 == 0)
+		return (NULL);
+	if (s1 == s2)
+		return (s1);
+	if (s1 == NULL && s2 == NULL)
+		return (s1);
+	i = 0;
+	while (i < n)
 	{
-		*pointeur_dest++ = *pointeur_src++;
-		n--;
+		((char*)s1)[i] = ((char*)s2)[i];
+		i++;
 	}
-	return (dest);
+	return (s1);
 }

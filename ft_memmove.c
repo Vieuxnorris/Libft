@@ -5,37 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:34:11 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:39:35 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 18:50:40 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 17:57:15 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t length)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*pointeur_dst;
-	unsigned char	*pointeur_src;
-	size_t			i;
+	unsigned char *d;
+	unsigned char *s;
 
-	i = 0;
-	pointeur_dst = (unsigned char *)dst;
-	pointeur_src = (unsigned char *)src;
-	if (pointeur_src < pointeur_dst)
-	{
-		while ((int)length > 0)
-		{
-			*(pointeur_dst + i) = *(pointeur_src + i);
-			length--;
-			i++;
-		}
-	}
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	if (!dst)
+		return (NULL);
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	if (dst == src)
+		return (dst);
+	if (d < s)
+		while (len--)
+			*d++ = *s++;
 	else
-		while ((int)length > 0)
-		{
-			*(pointeur_dst + i) = *(pointeur_src + i);
-			length--;
-			i++;
-		}
+	{
+		d += len;
+		s += len;
+		while (len--)
+			*--d = *--s;
+	}
 	return (dst);
 }

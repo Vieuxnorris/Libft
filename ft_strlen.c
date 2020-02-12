@@ -5,22 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:58:35 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:58:54 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 15:57:35 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 15:58:43 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *src)
 {
-	size_t i;
+	size_t	i;
 
+	if (!src)
+		return (0);
 	i = 0;
-	while (*str != '\0')
-	{
+	while (src[i])
 		i++;
-		str++;
-	}
 	return (i);
 }

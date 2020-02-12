@@ -5,27 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:30:43 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:31:42 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 18:43:56 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 18:00:19 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char *p1;
-	unsigned char *p2;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	p1 = (unsigned char *)pointer1;
-	p2 = (unsigned char *)pointer2;
-	while (size > 0)
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (n--)
 	{
-		if (*p1 != *p2)
-			return (*p1 - *p2);
-		p1++;
-		p2++;
-		size--;
+		if (*str1 != *str2)
+			return (*str1 - *str2);
+		if (n)
+		{
+			str1++;
+			str2++;
+		}
 	}
 	return (0);
 }

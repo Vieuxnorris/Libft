@@ -5,64 +5,60 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 15:09:31 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 15:15:44 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/08 17:40:19 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 19:03:31 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_digitlen(long nombre)
+static int		count_len(int nbr)
 {
-	size_t	size;
+	int				count;
+	unsigned int	unbr;
 
-	if (nombre == 0)
-		return (nombre + 1);
-	size = 0;
-	if (nombre < 0)
-	{
-		nombre = -nombre;
-		size++;
-	}
-	while (nombre != 0)
-	{
-		nombre /= 10;
-		size++;
-	}
-	return (size);
-}
-
-static int	ft_sign(int n)
-{
-	if (n < 0)
+	if (nbr == 0)
 		return (1);
-	return (0);
+	count = 0;
+	unbr = nbr;
+	if (nbr < 0)
+	{
+		count++;
+		unbr = -unbr;
+	}
+	while (unbr > 0)
+	{
+		unbr /= 10;
+		count++;
+	}
+	return (count);
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	long	long_n;
-	long	longueur;
-	char	*fresh;
+	char			*str;
+	int				len;
+	int				is_negative;
+	unsigned int	unbr;
 
-	long_n = n;
-	longueur = ft_digitlen(long_n);
-	if (longueur == 0)
-		longueur = 1;
-	fresh = (char *)malloc((longueur + 1) * sizeof(char));
-	if (!fresh)
+	len = count_len(n);
+	if (!(str = (char*)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
-	fresh[longueur] = '\0';
-	longueur--;
-	if (long_n < 0)
-		long_n = -long_n;
-	while (longueur >= 0)
+	str[len] = '\0';
+	is_negative = 0;
+	unbr = n;
+	if (n < 0)
 	{
-		fresh[longueur] = (long_n % 10) + '0';
-		longueur--;
-		long_n /= 10;
+		is_negative = 1;
+		str[0] = '-';
+		unbr = -n;
 	}
-	if (ft_sign(n))
-		fresh[0] = '-';
-	return (fresh);
+	len--;
+	while (len >= (is_negative ? 1 : 0))
+	{
+		str[len] = unbr % 10 + '0';
+		unbr /= 10;
+		len--;
+	}
+	return (str);
 }

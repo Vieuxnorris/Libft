@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/13 16:09:51 by jwins             #+#    #+#             */
-/*   Updated: 2019/10/13 16:10:09 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 16:37:25 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/12 16:38:12 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int		ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
-		return (c - 32);
+		c -= 32;
 	return (c);
 }
