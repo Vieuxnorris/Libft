@@ -6,7 +6,7 @@
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 15:54:57 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/12 15:56:56 by jwins            ###   ########.fr       */
+/*   Updated: 2020/02/12 19:45:02 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	unsigned int	i;
 
 	i = 0;
+	if (!dst || !src)
+		return (0);
 	if (size > 0)
 	{
 		while (--size && src[i])

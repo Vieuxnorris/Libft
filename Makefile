@@ -6,7 +6,7 @@
 #    By: jwins <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/12 18:08:20 by jwins             #+#    #+#              #
-#    Updated: 2020/02/12 18:27:33 by jwins            ###   ########.fr        #
+#    Updated: 2020/02/14 15:08:11 by jwins            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,9 @@ SRCS		=	ft_atoi.c ft_isalpha.c ft_memccpy.c ft_memmove.c ft_strlcat.c ft_strnstr
 				ft_putendl_fd.c ft_putnbr_fd.c ft_strmapi.c ft_split.c ft_itoa.c ft_strcat.c \
 				ft_strcpy.c ft_strncpy.c ft_strndup.c \
 
-SRCS_B		=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-				ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-				ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c \
-
+SRCS_B 		= 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c 				\
+			  	ft_lstadd_back.c ft_lstlast.c ft_lstdelone.c 				\
+			  	ft_lstiter.c ft_lstclear.c ft_lstmap.c
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror -c
 RM			=	rm -f

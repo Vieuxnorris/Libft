@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jwins <jwins@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 15:59:21 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/14 16:51:37 by jwins            ###   ########.fr       */
+/*   Created: 2020/02/12 19:56:33 by jwins             #+#    #+#             */
+/*   Updated: 2020/02/14 16:59:28 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*str;
-	size_t	i;
+	t_list	*dst;
+	t_list	*first;
 
-	if (!s || !f)
+	if (!lst || !f || !del)
 		return (NULL);
-	if (s)
+	if (!(dst = ft_lstnew(f(lst->content))))
+		return (NULL);
+	first = dst;
+	while (lst)
 	{
-		str = ft_strdup((const char *)s);
-		if (str == NULL)
-			return (NULL);
-		i = 0;
-		while (str[i] != 0)
+		if (lst->next)
 		{
-			str[i] = f((unsigned int)i, str[i]);
-			i++;
+			if (!(dst->next = ft_lstnew(f(lst->next->content))))
+			{
+				ft_lstclear(&first, del);
+				return (0);
+			}
+			dst = dst->next;
 		}
-		return (str);
+		lst = lst->next;
 	}
-	else
-		return (NULL);
+	dst->next = NULL;
+	return (first);
 }

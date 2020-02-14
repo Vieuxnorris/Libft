@@ -6,7 +6,7 @@
 /*   By: jwins <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 16:44:35 by jwins             #+#    #+#             */
-/*   Updated: 2020/02/12 18:57:00 by jwins            ###   ########.fr       */
+/*   Updated: 2020/02/14 15:13:22 by jwins            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_atoi(const char *str);
 void				ft_bzero(void *s2, unsigned int n);
 void				*ft_calloc(size_t count, size_t size);
@@ -86,5 +87,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 char				*ft_utoa_base(unsigned int n, char *base, int b_len);
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 
 #endif
